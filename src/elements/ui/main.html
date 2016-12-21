@@ -1,0 +1,24 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+
+
+<dom-module id="ui-main">
+	<template>
+		<style>
+			app-header {
+				background-color: var(--header-color);
+				color: var(--primary-font-color);
+			}
+		</style>
+		<app-header-layout>
+			<app-header>
+				<app-toolbar main-title>
+					kommix
+				</app-toolbar>
+			</app-header>
+		</app-header-layout>
+	</template>
+	<script src="main.js"></script>
+</dom-module>

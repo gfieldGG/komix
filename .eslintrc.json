@@ -1,4 +1,12 @@
 {
 	"root": "true",
-	"extends": "cortys"
+	"extends": "cortys",
+	"globals": {
+		"Polymer": false
+	},
+	"rules": {
+		"new-cap": ["warn", {
+			"capIsNewExceptions": ["Polymer"]
+		}]
+	}
 }
