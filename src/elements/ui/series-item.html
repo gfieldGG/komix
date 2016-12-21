@@ -1,0 +1,40 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<dom-module id="series-item">
+	<template>
+		<style>
+			#item {
+				display: flex;
+				flex-direction: column;
+				align-items: stretch;
+				width: 200px;
+			}
+			#title {
+				@apply(--paper-font-common-base);
+				font-size: 36px;
+				color: var(--primary-font-color);
+				text-align: center;
+			}
+			#year {
+				@apply(--paper-font-common-base);
+				font-size: 18px;
+				color: var(--secondary-font-color);
+				text-align: center;
+			}
+			#cover {
+				height: 200px;
+				border-radius: 2px;
+				background-size: cover;
+				background-position: center bottom;
+				background-image: url(https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/349320/349320._SX1280_QL80_TTD_.jpg);
+			}
+		</style>
+
+		<div id="item">
+			<div id="cover"></div>
+			<div id="title">Saga</div>
+			<div id="year">2012</div>
+		</div>
+	</template>
+	<script src="series-item.js"></script>
+</dom-module>
