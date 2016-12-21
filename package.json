@@ -1,0 +1,23 @@
+{
+  "name": "kommix",
+  "version": "0.1.0",
+  "description": "Comic reader using a ComicStreamer backend",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggfield/kommix.git"
+  },
+  "author": "ggfield",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ggfield/kommix/issues"
+  },
+  "homepage": "https://github.com/ggfield/kommix#readme",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "eslint": "^3.12.2",
+    "eslint-config-cortys": "^1.1.0"
+  }
+}
