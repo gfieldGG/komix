@@ -4,15 +4,14 @@
 <dom-module id="item-list">
 	<template>
 		<style>
-		iron-list {
-			height: 1000px;
-		}
+			iron-list {
+				position: relative;
+				height: 100%;
+			}
 		</style>
 
-
-		<iron-list items="[[items]]" as="item" grid>
+		<iron-list items="[[items]]" grid>
 			<template>
-
 				<series-item title="[[item.title]]" year="[[item.year]]" cover="[[item.cover]]"></series-item>
 			</template>
 		</iron-list>
