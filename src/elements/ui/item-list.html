@@ -8,11 +8,16 @@
 				position: relative;
 				height: 100%;
 			}
+			.item {
+				padding: 8px;
+			}
 		</style>
 
 		<iron-list items="[[items]]" as="item" grid>
 			<template>
-				<series-item title="[[item.title]]" year="[[item.year]]" cover="[[item.cover]]"></series-item>
+				<div class="item">
+					<series-item title="[[item.title]]" year="[[item.year]]" cover="[[item.cover]]"></series-item>
+				</div>
 			</template>
 		</iron-list>
 	</template>
