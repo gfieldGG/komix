@@ -1,4 +1,5 @@
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/paper-ripple/paper-ripple.html">
 
 <dom-module id="series-item">
 	<template>
@@ -8,6 +9,7 @@
 				flex-direction: column;
 				align-items: stretch;
 				width: 200px;
+				cursor: pointer;
 			}
 			#title {
 				@apply(--paper-font-common-base);
@@ -22,19 +24,23 @@
 				text-align: center;
 			}
 			#cover {
+				position: relative;
 				height: 200px;
 				border-radius: 2px;
 				background-size: cover;
 				background-position: center bottom;
-				background-image: url(https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/349320/349320._SX1280_QL80_TTD_.jpg);
+				background-repeat: no-repeat;
 			}
 		</style>
 
 		<div id="item">
-			<div id="cover"></div>
-			<div id="title">Saga</div>
-			<div id="year">2012</div>
+			<div id="cover">
+				<paper-ripple></paper-ripple>
+			</div>
+			<div id="title">[[title]]</div>
+			<div id="year">[[year]]</div>
 		</div>
 	</template>
+
 	<script src="series-item.js"></script>
 </dom-module>

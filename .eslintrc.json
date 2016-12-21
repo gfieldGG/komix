@@ -4,6 +4,9 @@
 	"globals": {
 		"Polymer": false
 	},
+	"env": {
+		"browser": true
+	},
 	"rules": {
 		"new-cap": ["warn", {
 			"capIsNewExceptions": ["Polymer"]

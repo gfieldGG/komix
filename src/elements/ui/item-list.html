@@ -1,0 +1,22 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/iron-list/iron-list.html">
+
+<dom-module id="item-list">
+	<template>
+		<style>
+		iron-list {
+			height: 1000px;
+		}
+		</style>
+
+
+		<iron-list items="[[items]]" as="item" grid>
+			<template>
+
+				<series-item title="[[item.title]]" year="[[item.year]]" cover="[[item.cover]]"></series-item>
+			</template>
+		</iron-list>
+	</template>
+
+	<script src="item-list.js"></script>
+</dom-module>
