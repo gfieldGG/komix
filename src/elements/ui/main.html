@@ -4,18 +4,20 @@
 <link rel="import" href="../../../bower_components/app-layout/app-toolbar/app-toolbar.html">
 
 
+
 <dom-module id="ui-main">
 	<template>
 		<style>
 			app-header {
 				background-color: var(--header-color);
 				color: var(--primary-font-color);
+				@apply(--header-font);
 			}
 		</style>
 		<app-header-layout>
 			<app-header>
-				<app-toolbar main-title>
-					kommix
+				<app-toolbar>
+					<div main-title>kommix</div>
 				</app-toolbar>
 			</app-header>
 		</app-header-layout>
