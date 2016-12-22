@@ -10,6 +10,9 @@
 <link rel="import" href="../../../bower_components/app-layout/app-toolbar/app-toolbar.html">
 
 <link rel="import" href="./item-list.html">
+<link rel="import" href="./series-view.html">
+<link rel="import" href="./issues-view.html">
+
 
 
 <dom-module id="ui-main">
@@ -33,9 +36,9 @@
 				</app-toolbar>
 			</app-header>
 
-			<iron-pages attr-for-selected="item-type" selected="[[typeData.type]]" fallback-selection="series">
-				<item-list item-type="series"></item-list>
-				<item-list item-type="issues"></item-list>
+			<iron-pages attr-for-selected="selector" selected="[[typeData.type]]" fallback-selection="series">
+				<issues-view selector="issues"></issues-view>
+				<series-view selector="series"></series-view>
 			</iron-pages>
 		</app-header-layout>
 	</template>
