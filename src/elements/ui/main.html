@@ -23,8 +23,8 @@
 			}
 		</style>
 
-		<carbon-location route="{{route}}" use-hash-as-path></carbon-location>
-		<carbon-route route="{{route}}" pattern="/:type" data="{{typeData}}"></carbon-route>
+		<app-location route="{{route}}" use-hash-as-path></app-location>
+		<app-route route="{{route}}" pattern="/:type" data="{{typeData}}"></app-route>
 
 		<app-header-layout>
 			<app-header reveals effects="waterfall">
@@ -33,8 +33,8 @@
 				</app-toolbar>
 			</app-header>
 
-			<iron-pages selected="{{typeData.type}}">
-				<item-list item-type="series" attrForSelected="itemType"></item-list>
+			<iron-pages selected="{{typeData.type}}" attrForSelected="item-type">
+				<item-list item-type="series"></item-list>
 				<item-list item-type="issues"></item-list>
 			</iron-pages>
 		</app-header-layout>
