@@ -2,6 +2,8 @@
 
 const gulp = require("gulp");
 const browserSync = require("browser-sync").create();
+const browserSyncSpa = require("browser-sync-middleware-spa");
+const path = require("path");
 
 gulp.task("serve", () => {
 	browserSync.init({
@@ -12,7 +14,9 @@ gulp.task("serve", () => {
 				"/bower_components": "bower_components"
 			}
 		},
-		files: "src/**/*"
+		files: "src/**/*",
+		middleware: browserSyncSpa(/^[^.]*$/,
+			path.join(__dirname, "src", "index.html"))
 	});
 });
 
