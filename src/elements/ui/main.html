@@ -1,9 +1,14 @@
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../../bower_components/app-route/app-location.html">
+<link rel="import" href="../../../bower_components/app-route/app-route.html">
 <link rel="import" href="../../../bower_components/iron-pages/iron-pages.html">
+
 <link rel="import" href="../../../bower_components/app-layout/app-header-layout/app-header-layout.html">
 <link rel="import" href="../../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="../../../bower_components/app-layout/app-toolbar/app-toolbar.html">
-<link rel="import" href="./series-item.html">
+
 <link rel="import" href="./item-list.html">
 
 
@@ -14,6 +19,9 @@
 				background-color: var(--header-color);
 				color: var(--primary-font-color);
 				@apply(--header-font);
+				position: fixed;
+				z-index: 1;
+				overflow: visible;
 			}
 			iron-pages {
 				width: 100%;
@@ -21,18 +29,21 @@
 			}
 		</style>
 
+		<carbon-location route="{{route}}" use-hash-as-path></carbon-location>
+		<carbon-route route="{{route}}" pattern="/:type" data="{{typeData}}"></carbon-route>
+
 		<app-header-layout>
-			<app-header effects="waterfall">
+			<app-header reveals effects="waterfall">
 				<app-toolbar>
 					<div main-title>kommix</div>
 				</app-toolbar>
 			</app-header>
+
+			<iron-pages selected="{{typeData.type}}">
+				<item-list item-type="series" attrForSelected="itemType"></item-list>
+				<item-list item-type="issues"></item-list>
+			</iron-pages>
 		</app-header-layout>
-
-		<iron-pages selected="0">
-			<item-list></item-list>
-		</iron-pages>
-
 	</template>
 	<script src="main.js"></script>
 </dom-module>
