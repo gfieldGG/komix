@@ -6,15 +6,12 @@
 <dom-module id="item-list">
 	<template>
 		<style>
-			iron-list {
-				display: block;
-			}
 			.item {
 				padding: 8px;
 			}
 		</style>
 
-		<iron-list items="[[items]]" as="item" grid id="list">
+		<iron-list items="[[items]]" grid scroll-target="document">
 			<template>
 				<div class="item">
 					<series-item title="[[item.title]]" year="[[item.year]]" cover="[[item.cover]]"></series-item>
