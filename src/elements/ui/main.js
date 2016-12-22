@@ -2,10 +2,5 @@
 
 Polymer({
 	is: "ui-main",
-	listeners: {
-		"tap": "_tapped"
-	},
-	_tapped() {
-
-	}
+	behaviors: [kommix.LocationControlBehavior]
 });

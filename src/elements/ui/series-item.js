@@ -14,9 +14,9 @@ Polymer({
 		}
 	},
 	listeners: {
-		"tap": "_tapped"
+		"tap": "_onTapped"
 	},
-	_tapped() {
-		console.log("IST TAPPED WOLLL");
+	_onTapped() {
+		this.fire("onItemOpened");
 	}
 });

@@ -2,7 +2,8 @@
 	"root": "true",
 	"extends": "cortys",
 	"globals": {
-		"Polymer": false
+		"Polymer": false,
+		"kommix": false
 	},
 	"env": {
 		"browser": true

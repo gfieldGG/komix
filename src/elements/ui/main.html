@@ -3,6 +3,7 @@
 <link rel="import" href="../../../bower_components/app-route/app-location.html">
 <link rel="import" href="../../../bower_components/app-route/app-route.html">
 <link rel="import" href="../../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../model/location-control-behavior.html">
 
 <link rel="import" href="../../../bower_components/app-layout/app-header-layout/app-header-layout.html">
 <link rel="import" href="../../../bower_components/app-layout/app-header/app-header.html">
@@ -26,8 +27,8 @@
 			}
 		</style>
 
-		<app-location route="{{route}}" use-hash-as-path></app-location>
-		<app-route route="{{route}}" pattern="/:type" data="{{typeData}}"></app-route>
+		<app-location route="{{route}}"></app-location>
+		<app-route route="{{route}}" pattern="/:type" data="{{location}}"></app-route>
 
 		<app-header-layout>
 			<app-header reveals effects="waterfall">
@@ -36,9 +37,9 @@
 				</app-toolbar>
 			</app-header>
 
-			<iron-pages attr-for-selected="selector" selected="[[typeData.type]]" fallback-selection="series">
-				<issues-view selector="issues"></issues-view>
-				<series-view selector="series"></series-view>
+			<iron-pages attr-for-selected="id" selected="[[location.type]]" fallback-selection="series">
+				<issues-view id="issues" location="[[location]]"></issues-view>
+				<series-view id="series" location="[[location]]"></series-view>
 			</iron-pages>
 		</app-header-layout>
 	</template>
