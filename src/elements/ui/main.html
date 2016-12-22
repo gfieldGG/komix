@@ -33,7 +33,7 @@
 				</app-toolbar>
 			</app-header>
 
-			<iron-pages selected="{{typeData.type}}" attrForSelected="item-type">
+			<iron-pages attr-for-selected="item-type" selected="[[typeData.type]]" fallback-selection="series">
 				<item-list item-type="series"></item-list>
 				<item-list item-type="issues"></item-list>
 			</iron-pages>
