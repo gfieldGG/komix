@@ -38,10 +38,11 @@
 			</app-header>
 
 			<iron-pages attr-for-selected="id" selected="[[location.type]]" fallback-selection="series">
-				<issues-view id="issues" location="[[location]]"></issues-view>
-				<series-view id="series" location="[[location]]"></series-view>
+				<issues-view id="issues" location="{{location}}"></issues-view>
+				<series-view id="series" location="{{location}}"></series-view>
 			</iron-pages>
 		</app-header-layout>
 	</template>
+
 	<script src="main.js"></script>
 </dom-module>

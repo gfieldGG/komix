@@ -4,7 +4,7 @@ Polymer({
 	is: "series-view",
 	behaviors: [kommix.LocationControlBehavior],
 	listeners: {
-		"onItemOpened": "_onItemOpened"
+		"itemOpen": "_onItemOpened"
 	},
 	_onItemOpened() {
 		this.gotoLibrary("issues");
