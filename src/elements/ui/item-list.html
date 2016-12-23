@@ -11,7 +11,7 @@
 			}
 		</style>
 
-		<iron-list items="[[items]]" grid scroll-target="document">
+		<iron-list items="[[items]]" as="item" grid scroll-target="document">
 			<template>
 				<div class="item">
 					<series-item title="[[item.title]]" year="[[item.year]]" cover="[[item.cover]]"></series-item>
