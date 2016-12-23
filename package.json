@@ -1,5 +1,5 @@
 {
-	"name": "kommix",
+	"name": "komix",
 	"version": "0.1.0",
 	"description": "Comic reader using a ComicStreamer backend",
 	"scripts": {
@@ -8,14 +8,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ggfield/kommix.git"
+		"url": "git+https://github.com/ggfield/komix.git"
 	},
 	"author": "ggfield",
 	"license": "LGPL-3.0",
 	"bugs": {
-		"url": "https://github.com/ggfield/kommix/issues"
+		"url": "https://github.com/ggfield/komix/issues"
 	},
-	"homepage": "https://github.com/ggfield/kommix#readme",
+	"homepage": "https://github.com/ggfield/komix#readme",
 	"devDependencies": {
 		"bower": "^1.8.0",
 		"eslint": "^3.12.2",

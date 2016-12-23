@@ -2,5 +2,5 @@
 
 Polymer({
 	is: "ui-main",
-	behaviors: [kommix.LocationControlBehavior]
+	behaviors: [komix.LocationControlBehavior]
 });

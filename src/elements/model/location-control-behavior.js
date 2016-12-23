@@ -1,6 +1,6 @@
 "use strict";
 
-kommix.LocationControlBehavior = {
+komix.LocationControlBehavior = {
 	properties: {
 		location: {
 			type: Object,
