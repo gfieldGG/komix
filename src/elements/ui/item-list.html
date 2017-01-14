@@ -1,6 +1,5 @@
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../../bower_components/iron-list/iron-list.html">
-<link rel="import" href="./item.html">;
 
 
 <dom-module id="item-list">
@@ -10,11 +9,9 @@
 				--item-margin: 8px;
 			}
 		</style>
-
+	<slot></slot>
 		<iron-list items="[[items]]" as="item" grid scroll-target="document">
-			<template>
-				<ui-item title="[[item.title]]" year="[[item.year]]" cover="[[item.cover]]"></ui-item>
-			</template>
+
 		</iron-list>
 	</template>
 

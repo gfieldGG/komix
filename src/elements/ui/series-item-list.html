@@ -1,6 +1,15 @@
-<dom-module series-item-list>
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="./item-list.html">
+<link rel="import" href="./item.html">
+
+
+<dom-module series-item-list id="series-item-list">
 	<template>
-		<item-list></item-list>
+		<item-list item-type="series">
+			<template>
+				<ui-item title="[[item.title]]" year="[[item.year]]" cover="[[item.cover]]"></ui-item>
+			</template>
+		</item-list>
 	</template>
 
 	<script src="series-item-list.js"></script>
