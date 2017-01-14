@@ -1,0 +1,16 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="./item-list.html">
+<link rel="import" href="./issue-item.html">
+
+
+<dom-module id="issue-item-list">
+	<template>
+		<item-list items="[[items]]">
+			<template>
+				<issue-item title="[[item.title]]" year="[[item.year]]" cover="[[item.cover]]"></issue-item>
+			</template>
+		</item-list>
+	</template>
+
+	<script src="issue-item-list.js"></script>
+</dom-module>
