@@ -5,14 +5,13 @@
 <dom-module id="item-list">
 	<template>
 		<style>
-			:host{
+			:host {
 				--item-margin: 8px;
 			}
 		</style>
-	<slot></slot>
-		<iron-list items="[[items]]" as="item" grid scroll-target="document">
 
-		</iron-list>
+		<slot id="itemTemplate"></slot>
+
 	</template>
 
 	<script src="item-list.js"></script>

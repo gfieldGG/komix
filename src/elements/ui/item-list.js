@@ -3,27 +3,34 @@
 Polymer({
 	is: "item-list",
 	properties: {
-		items: Array,
-		itemType: {
-			type: String,
-			observer: "_onItemTypeChanged"
+		items: {
+			type: Array,
+			observer: "_onItemsChanged"
 		}
 	},
-	_onItemTypeChanged() {
-		const items = [];
-		const cover = this.itemType === "series"
-			? "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/349320/349320._SX1280_QL80_TTD_.jpg"
-			: "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/43074/DIG005396_1._SX1280_QL80_TTD_.jpg";
+	_onItemsChanged() {
+		if(!this.ironList)
+			return;
+		this.ironList.items = this.items;
+	},
+	ready() {
+		const slotted = this.$.itemTemplate.tagName === "CONTENT"
+			? this.$.itemTemplate.getDistributedNodes()
+			: this.$.itemTemplate.assignedNodes();
 
-		console.log(this.itemType);
-		for(let i = 0; i < 500; i++) {
-			items[i] = {
-				cover,
-				title: "Saga",
-				year: 2000 + i
-			};
+		const template = [...slotted].find(node => node.tagName === "TEMPLATE");
+
+		if(!template) {
+			console.warn("item-list requires a template to be provided in light-dom");
+			return;
 		}
 
-		this.items = items;
+		const ironList = document.createElement("iron-list");
+		ironList.grid = true;
+		ironList.scrollTarget = "document";
+		ironList.items = this.items;
+		ironList.appendChild(template);
+		this.root.appendChild(ironList);
+		this.ironList = ironList;
 	}
 });
