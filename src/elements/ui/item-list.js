@@ -6,10 +6,10 @@ Polymer({
 		items: Array,
 		itemType: {
 			type: String,
-			observer: "_itemTypeChanged"
+			observer: "_onItemTypeChanged"
 		}
 	},
-	_itemTypeChanged() {
+	_onItemTypeChanged() {
 		const items = [];
 		const cover = this.itemType === "series"
 			? "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/349320/349320._SX1280_QL80_TTD_.jpg"
