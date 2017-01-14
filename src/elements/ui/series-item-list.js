@@ -1,5 +1,5 @@
 "use strict";
 
 Polymer({
-	is: "series-item"
+	is: "series-item-list"
 });

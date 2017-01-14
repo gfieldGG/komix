@@ -1,46 +1,13 @@
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../../bower_components/paper-ripple/paper-ripple.html">
-<link rel="import" href="../../../bower_components/iron-image/iron-image.html">
-
+<link rel="import" href="./item.html">;
 
 <dom-module id="series-item">
 	<template>
 		<style>
-			#item {
-				display: flex;
-				flex-direction: column;
-				align-items: stretch;
-				width: 200px;
-				cursor: pointer;
-			}
-			#title {
-				@apply(--paper-font-common-base);
-				font-size: 36px;
-				color: var(--primary-font-color);
-				text-align: center;
-			}
-			#year {
-				@apply(--paper-font-common-base);
-				font-size: 18px;
-				color: var(--secondary-font-color);
-				text-align: center;
-			}
-			#cover {
-				position: relative;
-				height: 200px;
-				border-radius: 2px;
-			}
 		</style>
 
-		<div id="item">
-			<div id="cover">
-				<iron-image style="width:100%; height:100%; background-color: lightgray;" sizing="cover" position="center bottom" src="[[cover]]"></iron-image>
-				<paper-ripple></paper-ripple>
-			</div>
-			<div id="title">[[title]]</div>
-			<div id="year">[[year]]</div>
-		</div>
+	<item></item>
 	</template>
 
-	<script src="series-item.js"></script>
+	<script src="item.js"></script>
 </dom-module>

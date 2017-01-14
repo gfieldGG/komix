@@ -1,21 +1,19 @@
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../../bower_components/iron-list/iron-list.html">
-<link rel="import" href="./series-item.html">;
+<link rel="import" href="./item.html">;
 
 
 <dom-module id="item-list">
 	<template>
 		<style>
-			.item {
-				padding: 8px;
+			:host{
+				--item-margin: 8px;
 			}
 		</style>
 
 		<iron-list items="[[items]]" as="item" grid scroll-target="document">
 			<template>
-				<div class="item">
-					<series-item title="[[item.title]]" year="[[item.year]]" cover="[[item.cover]]"></series-item>
-				</div>
+				<ui-item title="[[item.title]]" year="[[item.year]]" cover="[[item.cover]]"></ui-item>
 			</template>
 		</iron-list>
 	</template>
