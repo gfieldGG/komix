@@ -3,12 +3,6 @@
 Polymer({
 	is: "ui-item",
 	properties: {
-		title: {
-			type: String
-		},
-		year: {
-			type: String
-		},
 		cover: {
 			type: String
 		}
