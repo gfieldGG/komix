@@ -3,6 +3,12 @@
 Polymer({
 	is: "series-provider",
 	properties: {
+		_response: Object,
+		params: {
+			value: {
+				"order": "series"
+			}
+		},
 		series: {
 			notify: true,
 			computed: "_computeSeries(_response)"
@@ -28,17 +34,17 @@ Polymer({
 		if(issue.issue === "1") {
 			series.data.startYear = issue.year;
 			series.startYearFromFirstIssue = true;
-			series.data.coverIssue = 1;
+			series.data.coverIssue = issue.id;
 		}
 		else if(issue.year < series.data.startYear && !series.startYearFromFirstIssue) {
 			series.data.startYear = issue.year;
-			series.data.coverIssue = Number(issue.issue);
+			series.data.coverIssue = issue.id;
 		}
 
 		if(issue.year > series.data.endYear) {
 			series.data.endYear = issue.year;
 		}
 
-		return series;
+		return seriesMap;
 	}, new Map()), ([, { data }]) => data)
 });

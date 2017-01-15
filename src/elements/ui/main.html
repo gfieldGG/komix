@@ -12,7 +12,6 @@
 
 <link rel="import" href="./series-view.html">
 <link rel="import" href="./issues-view.html">
-<link rel="import" href="../model/comic-streamer.html">
 
 
 <dom-module id="ui-main">
@@ -39,7 +38,6 @@
 			<iron-pages attr-for-selected="id" selected="[[location.type]]" fallback-selection="series">
 				<issues-view id="issues" location="{{location}}"></issues-view>
 				<series-view id="series" location="{{location}}"></series-view>
-				<comic-streamer id="cs" location="{{location}}"></comic-streamer>
 			</iron-pages>
 		</app-header-layout>
 	</template>

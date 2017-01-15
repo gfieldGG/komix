@@ -2,6 +2,9 @@
 
 Polymer({
 	is: "series-view",
+	properties: {
+		_series: Array
+	},
 	behaviors: [komix.LocationControlBehavior],
 	listeners: {
 		"itemOpen": "_onItemOpened"

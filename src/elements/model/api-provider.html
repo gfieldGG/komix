@@ -1,8 +1,16 @@
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="./url-provider.html">
+
 
 <dom-module id="api-provider">
 	<template>
+		<url-provider
+			params="[[params]]"
+			path="[[path]]"
+			computed-params="{{_params}}"
+			url="{{_url}}"
+		></url-provider>
 		<iron-ajax
 			auto
 			method="GET"

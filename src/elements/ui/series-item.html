@@ -1,5 +1,7 @@
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
 <link rel="import" href="./item.html">;
+<link rel="import" href="../model/page-provider.html">;
+
 
 <dom-module id="series-item">
 	<template>
@@ -18,9 +20,15 @@
 			}
 		</style>
 
-		<ui-item cover="[[cover]]">
-			<div id="title">[[title]]</div>
-		    <div id="year">[[year]]</div>
+		<page-provider
+			issue-id="[[series.coverIssue]]"
+			page-number="0"
+			page-url="{{coverUrl}}"
+		></page-provider>
+
+		<ui-item cover="[[coverUrl]]">
+			<div id="title">[[series.name]]</div>
+		    <div id="year">[[series.startYear]] - [[series.endYear]]</div>
 		</ui-item>
 	</template>
 
