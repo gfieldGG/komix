@@ -1,7 +1,7 @@
 "use strict";
 
 Polymer({
-	is: "series-provider"
+	is: "series-provider",
 	properties: {
 		series: {
 			notify: true,
