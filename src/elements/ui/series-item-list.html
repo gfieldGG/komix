@@ -5,6 +5,12 @@
 
 <dom-module id="series-item-list">
 	<template>
+		<style>
+			item-list {
+				--cover-height: 200px;
+			}
+		</style>
+
 		<item-list items="[[items]]">
 			<template>
 				<series-item title="[[item.title]]" year="[[item.year]]" cover="[[item.cover]]"></series-item>
