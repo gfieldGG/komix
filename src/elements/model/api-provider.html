@@ -1,0 +1,18 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="api-provider">
+	<template>
+		<iron-ajax
+			auto
+			method="GET"
+			url="[[_url]]"
+			content-type="application/json"
+			params="[[_params]]"
+			last-response="{{response}}"
+			last-error="{{error}}"
+			loading="{{loading}}"
+		></iron-ajax>
+	</template>
+	<script src="api-provider.js"></script>
+</dom-module>
