@@ -1,6 +1,8 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="./issue-item-list.html">
 <link rel="import" href="../model/location-control-behavior.html">
+<link rel="import" href="../model/issue-provider.html">
+
 
 <dom-module id="issues-view">
 	<template>
@@ -8,7 +10,12 @@
 
 		</style>
 
-		<issue-item-list></issue-item-list>
+		<issue-provider
+			issues={{_issues}}
+			detail=[[detail]]
+		></issue-provider>
+
+		<issue-item-list items=[[_issues]]></issue-item-list>
 	</template>
 	<script src="issues-view.js"></script>
 </dom-module>

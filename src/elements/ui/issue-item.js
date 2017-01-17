@@ -3,11 +3,7 @@
 Polymer({
 	is: "issue-item",
 	properties: {
-		title: {
-			type: String
-		},
-		year: {
-			type: String
-		}
+		issue: Object,
+		coverUrl: String
 	}
 });
