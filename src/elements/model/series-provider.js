@@ -14,37 +14,39 @@ Polymer({
 			computed: "_computeSeries(_response)"
 		}
 	},
-	_computeSeries: response => Array.from(response.comics.reduce((seriesMap, issue) => {
-		const id = `${issue.volume}@${issue.series}`;
-		let series = seriesMap.get(id);
+	_computeSeries: response => Array.from(
+		response.comics.reduce((seriesMap, issue) => {
+			const id = `${issue.volume}@${issue.series}`;
+			let series = seriesMap.get(id);
 
-		if(series === undefined) {
-			series = {
-				startYearFromFirstIssue: false,
-				data: {
-					name: issue.series,
-					startYear: Infinity,
-					endYear: -Infinity,
-					coverIssue: undefined
-				}
-			};
-			seriesMap.set(id, series);
-		}
+			if(series === undefined) {
+				series = {
+					startYearFromFirstIssue: false,
+					data: {
+						name: issue.series,
+						volume: issue.volume,
+						startYear: Infinity,
+						endYear: -Infinity,
+						coverIssue: undefined
+					}
+				};
+				seriesMap.set(id, series);
+			}
 
-		if(issue.issue === "1") {
-			series.data.startYear = issue.year;
-			series.startYearFromFirstIssue = true;
-			series.data.coverIssue = issue.id;
-		}
-		else if(issue.year < series.data.startYear && !series.startYearFromFirstIssue) {
-			series.data.startYear = issue.year;
-			series.data.coverIssue = issue.id;
-		}
+			if(issue.issue === "1") {
+				series.data.startYear = issue.year;
+				series.startYearFromFirstIssue = true;
+				series.data.coverIssue = issue.id;
+			}
+			else if(issue.year < series.data.startYear && !series.startYearFromFirstIssue) {
+				series.data.startYear = issue.year;
+				series.data.coverIssue = issue.id;
+			}
 
-		if(issue.year > series.data.endYear) {
-			series.data.endYear = issue.year;
-		}
+			if(issue.year > series.data.endYear) {
+				series.data.endYear = issue.year;
+			}
 
-		return seriesMap;
-	}, new Map()), ([, { data }]) => data)
+			return seriesMap;
+		}, new Map()), ([, { data }]) => data)
 });
