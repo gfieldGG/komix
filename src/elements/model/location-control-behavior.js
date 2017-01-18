@@ -3,8 +3,6 @@
 komix.LocationControlBehavior = {
 	properties: {
 		location: {
-			type: Object,
-			view: Object,
 			notify: true
 		}
 	},
