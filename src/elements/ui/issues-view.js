@@ -4,12 +4,13 @@ Polymer({
 	is: "issues-view",
 	properties: {
 		_issues: Array,
+		route: {
+			type: Object,
+			notify: true
+		},
 		detail: {
 			type: Object,
-			value: {
-				name: "Y: The Last Man",
-				volume: 1
-			}
+			notify: true
 		}
 	},
 	behaviors: [komix.LocationControlBehavior],

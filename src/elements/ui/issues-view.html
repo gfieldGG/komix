@@ -2,6 +2,7 @@
 <link rel="import" href="./issue-item-list.html">
 <link rel="import" href="../model/location-control-behavior.html">
 <link rel="import" href="../model/issue-provider.html">
+<link rel="import" href="../../../bower_components/app-route/app-route.html">
 
 
 <dom-module id="issues-view">
@@ -10,9 +11,11 @@
 
 		</style>
 
+		<app-route route="{{route}}" pattern="/:name/:volume" data="{{detail}}"></app-route>
+
 		<issue-provider
+			series="[[detail]]"
 			issues="{{_issues}}"
-			detail="[[detail]]"
 		></issue-provider>
 
 		<issue-item-list items="[[_issues]]"></issue-item-list>
