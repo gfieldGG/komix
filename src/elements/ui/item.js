@@ -12,6 +12,6 @@ Polymer({
 		"tap": "_onTapped"
 	},
 	_onTapped() {
-		this.fire("itemOpen", this.detail);
+		this.fire("itemOpen");
 	}
 });

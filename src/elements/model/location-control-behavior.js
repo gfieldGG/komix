@@ -4,10 +4,12 @@ komix.LocationControlBehavior = {
 	properties: {
 		location: {
 			type: Object,
+			view: Object,
 			notify: true
 		}
 	},
-	gotoLibrary(type) {
-		this.set("location.type", type);
+	gotoLibrary(view) {
+		this.set("location.view", view);
+		this.set("location.type", "library");
 	}
 };

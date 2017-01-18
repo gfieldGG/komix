@@ -7,7 +7,7 @@ Polymer({
 		detail: {
 			type: Object,
 			value: {
-				name: "Watchmen",
+				name: "Y: The Last Man",
 				volume: 1
 			}
 		}
