@@ -48,5 +48,5 @@ Polymer({
 			}
 
 			return seriesMap;
-		}, new Map()), ([, { data }]) => data)
+		}, new Map()), ([, data ]) => data)
 });
