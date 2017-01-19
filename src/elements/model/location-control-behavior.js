@@ -1,6 +1,6 @@
 "use strict";
 
-komix.LocationControlBehavior = Polymer.singletonize({
+komix.LocationControlBehavior = {
 	properties: {
 		route: {
 			type: Object,
@@ -16,4 +16,4 @@ komix.LocationControlBehavior = Polymer.singletonize({
 	gotoLibrary(view) {
 		this.set("route.path", `/library/${view}`);
 	}
-});
+};
