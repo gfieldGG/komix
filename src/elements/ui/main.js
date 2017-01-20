@@ -2,5 +2,8 @@
 
 Polymer({
 	is: "ui-main",
-	behaviors: [komix.LocationControlBehavior]
+	behaviors: [komix.LocationControlBehavior],
+	ready() {
+		this.initialize();
+	}
 });

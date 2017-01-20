@@ -11,6 +11,9 @@
 	"rules": {
 		"new-cap": ["warn", {
 			"capIsNewExceptions": ["Polymer"]
+		}],
+		"no-underscore-dangle": ["warn", {
+			"allowAfterThis": true
 		}]
 	}
 }

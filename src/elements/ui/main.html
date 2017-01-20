@@ -25,8 +25,8 @@
 			}
 		</style>
 
-		<app-location route="{{route}}"></app-location>
-		<app-route route="{{route}}" pattern="/:type/:view" tail="{{_subRoute}}" data="{{_location}}"></app-route>
+		<app-location route="{{_route}}"></app-location>
+		<app-route route="{{_route}}" pattern="/:type/:view" tail="{{_subRoute}}" data="{{_location}}"></app-route>
 
 		<app-header-layout>
 			<app-header reveals effects="waterfall">

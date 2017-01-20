@@ -1,19 +1,19 @@
 "use strict";
 
 komix.LocationControlBehavior = {
-	properties: {
-		route: {
-			type: Object,
-			notify: true
-		}
+	_pushState(route) {
+		history.pushState({}, "", `/library/${route}`);
+		window.dispatchEvent(new CustomEvent("location-changed"));
 	},
-	addRoute(newRoute) {
-		if(this.route !== undefined)
-			throw new Error("Route is already initialized.");
-
-		this.route = newRoute;
+	_replaceState(route) {
+		history.replaceState({}, "", route);
+		window.dispatchEvent(new CustomEvent("location-changed"));
+	},
+	initialize() {
+		if(new URL(window.location.href).pathname === "/")
+			this._replaceState("/library/series");
 	},
 	gotoLibrary(view) {
-		this.set("route.path", `/library/${view}`);
+		this._pushState(view);
 	}
 };
