@@ -13,7 +13,7 @@ Polymer({
 	listeners: {
 		"itemOpen": "_onItemOpened"
 	},
-	_onItemOpened() {
-		this.gotoLibrary("series");
+	_onItemOpened(e) {
+		this.gotoUrl("reader", e.detail.id);
 	}
 });
