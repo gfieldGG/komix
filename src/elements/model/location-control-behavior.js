@@ -2,7 +2,7 @@
 
 komix.LocationControlBehavior = {
 	_pushState(route) {
-		history.pushState({}, "", `/library/${route}`);
+		history.pushState({}, "", route);
 		window.dispatchEvent(new CustomEvent("location-changed"));
 	},
 	_replaceState(route) {
@@ -11,9 +11,23 @@ komix.LocationControlBehavior = {
 	},
 	initialize() {
 		if(new URL(window.location.href).pathname === "/")
-			this._replaceState("/library/series");
+			this.replaceUrl("library", "series");
 	},
-	gotoLibrary(view) {
-		this._pushState(view);
+	computeUrl(...args) {
+		const queryParams = args[args.length - 1];
+
+		return `/${args.slice(0, -1).join("/")}${
+			typeof queryParams === "object"
+				? `?${Object.entries(queryParams)
+					.map(entry => entry.map(encodeURIComponent).join("="))
+					.join("&")}`
+				: `/${queryParams}`
+		}`;
+	},
+	gotoUrl(...args) {
+		this._pushState(this.computeUrl(...args));
+	},
+	replaceUrl(...args) {
+		this._replaceState(this.computeUrl(...args));
 	}
 };
