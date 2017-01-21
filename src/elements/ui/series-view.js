@@ -9,7 +9,10 @@ Polymer({
 	listeners: {
 		"itemOpen": "_onItemOpened"
 	},
-	_onItemOpened() {
-		this.gotoLibrary("issues");
+	_onItemOpened(e) {
+		this.gotoUrl("library", "issues", {
+			name: e.detail.name,
+			volume: e.detail.volume
+		});
 	}
 });

@@ -11,10 +11,8 @@
 
 		</style>
 
-		<app-route route="{{route}}" pattern="/:name/:volume" data="{{detail}}"></app-route>
-
 		<issue-provider
-			series="[[detail]]"
+			series="[[params]]"
 			issues="{{_issues}}"
 		></issue-provider>
 

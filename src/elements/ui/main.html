@@ -26,7 +26,7 @@
 		</style>
 
 		<app-location route="{{_route}}"></app-location>
-		<app-route route="{{_route}}" pattern="/:type/:view" tail="{{_subRoute}}" data="{{_location}}"></app-route>
+		<app-route route="{{_route}}" pattern="/:type/:view" query-params={{_queryParams}} data="{{_location}}"></app-route>
 
 		<app-header-layout>
 			<app-header reveals effects="waterfall">
@@ -36,8 +36,8 @@
 			</app-header>
 
 			<iron-pages attr-for-selected="id" selected="[[_location.view]]" fallback-selection="series">
-				<issues-view id="issues" route="{{_subRoute}}" location="{{_location}}"></issues-view>
-				<series-view id="series" location="{{_location}}"></series-view>
+				<issues-view id="issues" params="[[_queryParams]]"></issues-view>
+				<series-view id="series"></series-view>
 			</iron-pages>
 		</app-header-layout>
 	</template>

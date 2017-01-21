@@ -3,15 +3,13 @@
 Polymer({
 	is: "ui-item",
 	properties: {
-		cover: {
-			type: String
-		},
+		cover: String,
 		detail: Object
 	},
 	listeners: {
 		"tap": "_onTapped"
 	},
 	_onTapped() {
-		this.fire("itemOpen");
+		this.fire("itemOpen", this.detail);
 	}
 });

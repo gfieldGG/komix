@@ -4,12 +4,6 @@ Polymer({
 	is: "issue-provider",
 	properties: {
 		_response: Object,
-		series: {
-			value: {
-				name: "Moon Knight",
-				volume: "4"
-			}
-		},
 		params: {
 			computed: "_computeParams(series)"
 		},

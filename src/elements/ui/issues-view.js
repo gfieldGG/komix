@@ -4,11 +4,7 @@ Polymer({
 	is: "issues-view",
 	properties: {
 		_issues: Array,
-		route: {
-			type: Object,
-			notify: true
-		},
-		detail: {
+		params: {
 			type: Object,
 			notify: true
 		}
