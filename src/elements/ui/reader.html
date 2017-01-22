@@ -1,0 +1,34 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../model/location-control-behavior.html">
+<link rel="import" href="../model/page-provider.html">;
+<link rel="import" href="../../../bower_components/iron-image/iron-image.html">
+
+
+<dom-module id="ui-reader">
+	<template>
+		<style>
+			:host {
+				display: block;
+				overflow: visible;
+				height: auto;
+				width: auto;
+			}
+
+			iron-image {
+				height: auto;
+				width: auto;
+			}
+		</style>
+
+		<page-provider
+			issue-id="[[params.issue]]"
+			page-number="[[params.page]]"
+			page-url="{{_currentPageUrl}}"
+		></page-provider>
+
+		<iron-image style="width:100%; height:100%; background-color: lightgray;" sizing="contain" position="center center" src="[[_currentPageUrl]]"></iron-image>
+
+	</template>
+
+	<script src="reader.js" charset="utf-8"></script>
+</dom-module>

@@ -14,6 +14,9 @@ Polymer({
 		"itemOpen": "_onItemOpened"
 	},
 	_onItemOpened(e) {
-		this.gotoUrl("reader", e.detail.id);
+		this.gotoUrl("reader", "reader", {
+			issue: e.detail.id,
+			page: 0
+		});
 	}
 });

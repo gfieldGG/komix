@@ -12,6 +12,7 @@
 
 <link rel="import" href="./series-view.html">
 <link rel="import" href="./issues-view.html">
+<link rel="import" href="./reader.html">
 
 
 <dom-module id="ui-main">
@@ -22,6 +23,11 @@
 				color: var(--primary-font-color);
 				@apply(--header-font);
 				overflow: visible;
+			}
+
+			ui-reader {
+				width: 100%;
+				height: 1000px;
 			}
 		</style>
 
@@ -35,10 +41,14 @@
 				</app-toolbar>
 			</app-header>
 
-			<iron-pages attr-for-selected="id" selected="[[_location.view]]" fallback-selection="series">
-				<issues-view id="issues" params="[[_queryParams]]"></issues-view>
-				<series-view id="series"></series-view>
+			<iron-pages attr-for-selected="id" selected="[[_location.type]]" fallback-selection="library">
+				<iron-pages id="library" attr-for-selected="id" selected="[[_location.view]]" fallback-selection="series">
+					<issues-view id="issues" params="[[_queryParams]]"></issues-view>
+					<series-view id="series"></series-view>
+				</iron-pages>
+				<ui-reader id="reader" params="[[_queryParams]]"></ui-reader>
 			</iron-pages>
+
 		</app-header-layout>
 	</template>
 

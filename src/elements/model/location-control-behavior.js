@@ -15,8 +15,11 @@ komix.LocationControlBehavior = {
 	},
 	computeUrl(...args) {
 		const queryParams = args[args.length - 1];
+		const path = typeof args[0] === "object"
+			? new URL(window.location.href).pathname.substring(1)
+			: args.slice(0, -1).join("/");
 
-		return `/${args.slice(0, -1).join("/")}${
+		return `/${path}${
 			typeof queryParams === "object"
 				? `?${Object.entries(queryParams)
 					.map(entry => entry.map(encodeURIComponent).join("="))
@@ -28,6 +31,7 @@ komix.LocationControlBehavior = {
 		this._pushState(this.computeUrl(...args));
 	},
 	replaceUrl(...args) {
+		console.log("reaplceurl")
 		this._replaceState(this.computeUrl(...args));
 	}
 };
