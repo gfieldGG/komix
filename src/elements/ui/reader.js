@@ -7,10 +7,9 @@ Polymer({
 		params: Object,
 	},
 	listeners: {
-		"tap": "_onTapped"
+		"pageTapped": "_onPageTapped"
 	},
-	_onTapped() {
-		console.log("tapped");
+	_onPageTapped() {
 		this.replaceUrl({
 			issue: this.params.issue,
 			page: this.params.page++

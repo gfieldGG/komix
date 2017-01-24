@@ -31,7 +31,6 @@ komix.LocationControlBehavior = {
 		this._pushState(this.computeUrl(...args));
 	},
 	replaceUrl(...args) {
-		console.log("reaplceurl")
 		this._replaceState(this.computeUrl(...args));
 	}
 };
