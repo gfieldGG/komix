@@ -16,7 +16,8 @@ Polymer({
 	_onItemOpened(e) {
 		this.gotoUrl("reader", "reader", {
 			issue: e.detail.id,
-			page: 0
+			page: 0,
+			pageCount: e.detail.pageCount
 		});
 	}
 });

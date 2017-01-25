@@ -3,7 +3,7 @@
 Polymer({
 	is: "reader-page",
 	properties: {
-		pageUrl: Object,
+		pageUrl: String
 	},
 	listeners: {
 		"tap": "_onTapped"

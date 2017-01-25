@@ -26,7 +26,7 @@ Polymer({
 					title: `${issue.series} #${issue.issue}`,
 					series: issue.series,
 					year: issue.year,
-					pagecount: issue.page_count,
+					pageCount: issue.page_count,
 					lastreadPage: Number(issue.lastread_page)
 				})
 		))

@@ -4,7 +4,7 @@
 <link rel="import" href="../ui/reader-page.html">;
 
 
-<dom-module id="ui-reader">
+<dom-module id="reader-view">
 	<template>
 		<style>
 			:host {
@@ -12,6 +12,9 @@
 				overflow: visible;
 				height: auto;
 				width: auto;
+			}
+			reader-page {
+				height: 100%;
 			}
 		</style>
 
@@ -24,5 +27,5 @@
 		<reader-page page-url="[[_currentPageUrl]]"></reader-page>
 	</template>
 
-	<script src="reader.js" charset="utf-8"></script>
+	<script src="reader-view.js" charset="utf-8"></script>
 </dom-module>
