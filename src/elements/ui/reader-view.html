@@ -1,7 +1,6 @@
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
 <link rel="import" href="../model/location-control-behavior.html">
-<link rel="import" href="../model/page-provider.html">
-<link rel="import" href="../ui/reader-page.html">;
+<link rel="import" href="./page-spinner.html">
 
 
 <dom-module id="reader-view">
@@ -13,18 +12,18 @@
 				height: auto;
 				width: auto;
 			}
-			reader-page {
-				height: 100%;
+
+			page-spinner {
+				height: inherit;
 			}
 		</style>
 
-		<page-provider
+		<page-spinner
 			issue-id="[[params.issue]]"
-			page-number="[[params.page]]"
-			page-url="{{_currentPageUrl}}"
-		></page-provider>
+			page-count="[[params.pageCount]]"
+			current-page="{{params.page}}"
+		></page-spinner>
 
-		<reader-page page-url="[[_currentPageUrl]]"></reader-page>
 	</template>
 
 	<script src="reader-view.js" charset="utf-8"></script>

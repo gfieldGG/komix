@@ -1,0 +1,23 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../model/page-provider.html">;
+<link rel="import" href="../ui/reader-page.html">;
+
+
+
+<dom-module id="page-spinner">
+	<template>
+		<style>
+			reader-page {
+				height: inherit;
+			}
+		</style>
+
+		<reader-page
+			issue-id="[[issueId]]"
+			page-number="[[currentPage]]"
+		></reader-page>
+	</template>
+
+
+	<script src="page-spinner.js"></script>
+</dom-module>

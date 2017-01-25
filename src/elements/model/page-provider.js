@@ -13,6 +13,7 @@ Polymer({
 		pageNumber: Number,
 		maxHeight: Number,
 		pageUrl: {
+			type: String,
 			notify: true
 		}
 	},

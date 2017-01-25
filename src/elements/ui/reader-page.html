@@ -19,7 +19,13 @@
 			}
 		</style>
 
-		<iron-image style="width:100%; height:100%; background-color: var(--paper-grey-900);" sizing="contain" position="center center" src="[[pageUrl]]"></iron-image>
+		<page-provider
+			issue-id="[[issueId]]"
+			page-number="[[pageNumber]]"
+			page-url="{{_pageUrl}}"
+		></page-provider>
+
+		<iron-image style="width:100%; height:100%; background-color: var(--paper-grey-900);" sizing="contain" position="center center" src="[[_pageUrl]]"></iron-image>
 
 	</template>
 
